@@ -39,6 +39,20 @@ st.markdown("""
         background-color: white;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         margin-bottom: 1rem;
+        color: #1f2937 !important;
+    }
+    .restaurant-card h3 {
+        color: #111827 !important;
+        margin-top: 0;
+    }
+    .restaurant-card p {
+        color: #374151 !important;
+    }
+    .restaurant-card b {
+        color: #111827 !important;
+    }
+    .restaurant-card i {
+        color: #4b5563 !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -70,10 +84,15 @@ def main():
         format_func=lambda x: "Any area" if x == "" else x
     )
 
-    cuisines_list = sorted(list(index.by_cuisine.keys()))
+    # Curated list of popular cuisines for better UX
+    POPULAR_CUISINES = [
+        "North Indian", "South Indian", "Chinese", "Italian", "Pizza", 
+        "Fast Food", "Cafe", "Biryani", "Mexican", "Mughlai", "Desserts", "Beverages"
+    ]
+    
     cuisine = st.sidebar.selectbox(
         "Cuisine",
-        options=[""] + cuisines_list,
+        options=[""] + sorted(POPULAR_CUISINES),
         format_func=lambda x: "Any cuisine" if x == "" else x
     )
 
