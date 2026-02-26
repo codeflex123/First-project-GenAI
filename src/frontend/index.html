@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Restaurant Recommendation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>AI Restaurant Recommendation</h1>
+        <p>Find the best places based on your preferences.</p>
+      </header>
+
+      <main>
+        <section class="card">
+          <h2>Your Preferences</h2>
+          <!-- Keep this id so existing tests still find 'preferences-form' -->
+          <div id="preferences-form">
+            <div id="root"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small>Powered by Hugging Face data and Gemini.</small>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+    <script type="text/babel" src="/static/app.js"></script>
+  </body>
+  </html>
+
